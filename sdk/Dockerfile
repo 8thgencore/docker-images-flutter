@@ -1,7 +1,7 @@
 FROM ghcr.io/cirruslabs/android-sdk:34
 
 LABEL org.opencontainers.image.source=https://github.com/cirruslabs/docker-images-flutter
-USER root
+USER 1000
 
 ARG flutter_version
 
@@ -15,4 +15,4 @@ RUN git clone --depth 1 --branch ${FLUTTER_VERSION} https://github.com/flutter/f
 
 RUN yes | flutter doctor --android-licenses \
     && flutter doctor \
-    && chown -R root:root ${FLUTTER_HOME}
+    && chown -R 1000:1000 ${FLUTTER_HOME}
