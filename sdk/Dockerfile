@@ -1,12 +1,9 @@
 FROM ghcr.io/cirruslabs/android-sdk:34
 
-LABEL org.opencontainers.image.source=https://github.com/cirruslabs/docker-images-flutter
-USER 1000
+LABEL org.opencontainers.image.source=https://github.com/8thgencore/docker-images-flutter
+USER root
 
 ARG flutter_version
-
-# For user "1000"
-ENV HOME=/tmp
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
     FLUTTER_VERSION=$flutter_version
