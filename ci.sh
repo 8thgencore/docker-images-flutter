@@ -12,7 +12,7 @@ then
     exit 0
 fi
 
-echo $GITHUB_TOKEN | docker login ghcr.io -u fkorotkov --password-stdin
+echo $GITHUB_TOKEN | docker login ghcr.io -u 8thgencore --password-stdin
 
 docker buildx build --platform linux/amd64,linux/arm64 --push \
    --tag ghcr.io/cirruslabs/flutter:${FLUTTER_VERSION/+/-} \

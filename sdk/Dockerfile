@@ -5,6 +5,9 @@ USER 1000
 
 ARG flutter_version
 
+# For user "1000"
+ENV HOME=/tmp
+
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
     FLUTTER_VERSION=$flutter_version
 ENV FLUTTER_ROOT=$FLUTTER_HOME
