@@ -3,8 +3,6 @@ FROM ghcr.io/cirruslabs/android-sdk:34
 LABEL org.opencontainers.image.source=https://github.com/8thgencore/docker-images-flutter
 USER root
 
-WORKDIR /tmp
-
 ARG flutter_version
 
 ENV FLUTTER_HOME=${HOME}/sdks/flutter \
