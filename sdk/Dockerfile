@@ -1,7 +1,9 @@
 FROM ghcr.io/cirruslabs/android-sdk:34
 
 LABEL org.opencontainers.image.source=https://github.com/8thgencore/docker-images-flutter
-USER root
+USER 1000
+
+WORKDIR /tmp
 
 ARG flutter_version
 
