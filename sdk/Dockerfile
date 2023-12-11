@@ -3,6 +3,8 @@ FROM ghcr.io/cirruslabs/android-sdk:34
 LABEL org.opencontainers.image.source=https://github.com/8thgencore/docker-images-flutter
 USER root
 
+ENV HOME=/tmp
+
 ENV ANDROID_HOME=${HOME}/android-sdk-linux \
     LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8 \
