@@ -3,7 +3,7 @@ FROM ghcr.io/cirruslabs/android-sdk:34
 LABEL org.opencontainers.image.source=https://github.com/8thgencore/docker-images-flutter
 
 # Setup new user
-RUN useradd -ms /bin/bash 1000
+RUN useradd -u 1000 -m -s /bin/bash user
 
 # Give permission
 USER root
