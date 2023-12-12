@@ -22,13 +22,10 @@ RUN yes | flutter doctor --android-licenses \
     && sdkmanager "--update" "--verbose" \
     && sdkmanager "build-tools;30.0.3" \
     && sdkmanager "platform-tools" \
-    && sdkmanager "platforms;android-33" "platforms;android-34" \
+    && sdkmanager "platforms;android-34" \
     && sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" \
     && chown -R 1000:1000 ${FLUTTER_HOME}
 
-RUN chmod a+w /opt/android-sdk-linux
-
-RUN ls -la /opt
-RUN ls -la /opt/android-sdk-linux
+RUN chmod -R a+w /opt/android-sdk-linux
 
 USER 1000
