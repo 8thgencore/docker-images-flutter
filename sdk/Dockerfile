@@ -17,11 +17,18 @@ ENV PATH ${PATH}:${FLUTTER_HOME}/bin:${FLUTTER_HOME}/bin/cache/dart-sdk/bin
 RUN git clone --depth 1 --branch ${FLUTTER_VERSION} https://github.com/flutter/flutter.git ${FLUTTER_HOME}
 
 RUN yes | flutter doctor --android-licenses \
-    && flutter config --android-sdk /opt/android-sdk-linux \
     && flutter doctor \
     && flutter precache \
     && sdkmanager "--update" "--verbose" \
-    && sdkmanager "build-tools;30.0.3" "platform-tools" "platforms;android-33" "platforms;android-34" "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" \
+    && sdkmanager "build-tools;30.0.3" \
+    && sdkmanager "platform-tools" \
+    && sdkmanager "platforms;android-33" "platforms;android-34" \
+    && sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" \
     && chown -R 1000:1000 ${FLUTTER_HOME}
+
+RUN chmod a+w /opt/android-sdk-linux
+
+RUN ls -la /opt
+RUN ls -la /opt/android-sdk-linux
 
 USER 1000
