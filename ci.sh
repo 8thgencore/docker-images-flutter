@@ -5,8 +5,8 @@ set -e
 if [ "$CIRRUS_BRANCH" != "master" ]
 then
     docker buildx build --platform linux/amd64,linux/arm64 \
-       --tag ghcr.io/cirruslabs/flutter:${FLUTTER_VERSION/+/-} \
-       --tag ghcr.io/cirruslabs/flutter:$DOCKER_TAG \
+       --tag ghcr.io/8thgencore/flutter:${FLUTTER_VERSION/+/-} \
+       --tag ghcr.io/8thgencore/flutter:$DOCKER_TAG \
        --build-arg flutter_version=$FLUTTER_VERSION \
        sdk
     exit 0
@@ -15,7 +15,7 @@ fi
 echo $GITHUB_TOKEN | docker login ghcr.io -u 8thgencore --password-stdin
 
 docker buildx build --platform linux/amd64,linux/arm64 --push \
-   --tag ghcr.io/cirruslabs/flutter:${FLUTTER_VERSION/+/-} \
-   --tag ghcr.io/cirruslabs/flutter:$DOCKER_TAG \
+   --tag ghcr.io/8thgencore/flutter:${FLUTTER_VERSION/+/-} \
+   --tag ghcr.io/8thgencore/flutter:$DOCKER_TAG \
    --build-arg flutter_version=$FLUTTER_VERSION \
    sdk
