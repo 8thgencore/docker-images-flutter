@@ -1,6 +1,5 @@
 env:
   GITHUB_TOKEN: ENCRYPTED[!974d7cb078ad8d257ce5661debe117636d966687b393c028eed5fc52ea39c206ec6fe284a0da2512529c6837c4fbb1d1!]
-
 docker_builder:
   name: flutter:$DOCKER_TAG
   env:
