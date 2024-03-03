@@ -20,7 +20,7 @@ RUN yes | flutter doctor --android-licenses \
     && flutter doctor \
     && flutter precache \
     && sdkmanager "--update" "--verbose" \
-    && sdkmanager "build-tools;30.0.3" \
+    && sdkmanager "build-tools;34.0.0" \
     && sdkmanager "platform-tools" \
     && sdkmanager "platforms;android-34" \
     && sdkmanager "extras;android;m2repository" "extras;google;google_play_services" "extras;google;m2repository" \
