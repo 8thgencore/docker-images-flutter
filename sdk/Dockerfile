@@ -4,7 +4,7 @@ LABEL org.opencontainers.image.source=https://github.com/8thgencore/docker-image
 USER root
 
 # Setup new user
-RUN useradd -u 1000 -m -s /bin/bash user
+# RUN useradd -u 1000 -m -s /bin/bash user
 
 ARG flutter_version
 
